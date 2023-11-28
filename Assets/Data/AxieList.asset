@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263da3102fbd7e8478ed05b934220793, type: 3}
+  m_Name: AxieList
+  m_EditorClassIdentifier: 
+  speedCost: 100
+  speedUpgradeValue: 0.5
+  minSpeed: 0
+  maxSpeed: 5
+  rateFireCost: 100
+  rateFireUpgradeValue: 0.1
+  minRateFire: -1.5
+  maxRateFire: -0.5
+  healthCost: 100
+  healthUpgradeValue: 1
+  minHealth: 0
+  maxHealth: 5
+  attackCost: 100
+  attackUpgradeValue: 5
+  minAttack: 0
+  maxAttack: 50
+  AxieList:
+  - axieName: 0
+    AxieDescribe: "Buba l\xE0 m\u1ED9t axie nhanh nh\u1EA1y, t\u1ED1c \u0111\u1ED9
+      ch\u1EA1y c\u1EE7a Buba r\u1EA5t nhanh"
+    speed: 3
+    rateFire: -1
+    health: 3
+    attackDamage: 20
+    idle: {fileID: 11400000, guid: adf597b740798e74c97169b487034ee7, type: 2}
+    run: {fileID: 11400000, guid: 7be90d7437c3b894f8d0e25efe8c6801, type: 2}
+    move: {fileID: 11400000, guid: 0e721f95356fb9e42b44986a49282696, type: 2}
+    attack: {fileID: 11400000, guid: 1bc17330cfe79434db26ff6951b2b66c, type: 2}
+    takeDamage: {fileID: 11400000, guid: ab6afb05854a02140b5336c7b865deb9, type: 2}
+    die: {fileID: 11400000, guid: c77d5269b9384fc4cab157ada0a2131b, type: 2}
+    takeEffect: {fileID: 11400000, guid: 6221e9e27b1269e44a8df969d5d95366, type: 2}
+    skeletonDataAsset: {fileID: 11400000, guid: b49379cb4c0ea41ad8687d360ccaa72b, type: 2}
+  - axieName: 1
+    AxieDescribe: "Olek l\xE0 m\u1ED9t chi\u1EBFn binh th\u1EF1c th\u1EE5, c\xF9ng
+      v\u1EDBi b\u1ED9 gi\xE1p s\u1EAFt, s\u1EE9c kh\u1ECFe c\u1EE7a anh \u1EA5y
+      r\u1EA5t cao"
+    speed: 2
+    rateFire: -1
+    health: 4
+    attackDamage: 20
+    idle: {fileID: 11400000, guid: 03caa27eb4697c042ba6027ec0045476, type: 2}
+    run: {fileID: 11400000, guid: 0396303bf9dbdde45bb6f18862fca7d9, type: 2}
+    move: {fileID: 11400000, guid: dbe12e9f33a32284b8824509deb7baa8, type: 2}
+    attack: {fileID: 11400000, guid: da3da45005867ab4ab0fa5b7188002f8, type: 2}
+    takeDamage: {fileID: 11400000, guid: a4666e8b79f735941932c5f1c67c3d47, type: 2}
+    die: {fileID: 11400000, guid: 3bae2fbb08c39ee47aa732d0fb013a6e, type: 2}
+    takeEffect: {fileID: 11400000, guid: a5d48e4d5c52fe943a34fdd92f0ecb15, type: 2}
+    skeletonDataAsset: {fileID: 11400000, guid: 7d1ef9104d38443a4b39cf8906cc277d, type: 2}
+  - axieName: 2
+    AxieDescribe: "Pomodora l\xE0 m\u1ED9t axie c\u1EF1c k\xEC nhi\u1EC7t huy\u1EBFt
+      v\xE0 n\u0103ng \u0111\u1ED9ng, s\u1EE9c t\u1EA5n c\xF4ng c\u1EE7a anh \u1EA5y
+      r\u1EA5t m\u1EA1nh m\u1EBD"
+    speed: 2
+    rateFire: -1
+    health: 3
+    attackDamage: 30
+    idle: {fileID: 11400000, guid: a22ecd46977960049ab3634e9c72601f, type: 2}
+    run: {fileID: 11400000, guid: 50e5614125d37e943853be5e21332eef, type: 2}
+    move: {fileID: 11400000, guid: 2cf9ffb6917ea4b428720ab550e91404, type: 2}
+    attack: {fileID: 11400000, guid: eba273763d664c643bc03de331cc3384, type: 2}
+    takeDamage: {fileID: 11400000, guid: eb8e7a6b0eea3c547bd22f27895d1224, type: 2}
+    die: {fileID: 11400000, guid: fa7149c428ef10348b95ff067b13403a, type: 2}
+    takeEffect: {fileID: 11400000, guid: ea4d90e08d43ae447ab589b8e85e6514, type: 2}
+    skeletonDataAsset: {fileID: 11400000, guid: aae79832a3f22487ab29ca5bad687273, type: 2}
+  - axieName: 3
+    AxieDescribe: "Momo l\xE0 m\u1ED9t axie linh ho\u1EA1t trong m\u1ECDi vi\u1EC7c,
+      anh \u1EA5y lu\xF4n x\u1EED l\xED t\xECnh hu\u1ED1ng m\u1ED9t c\xE1ch nhanh
+      v\xE0 ch\xEDnh x\xE1c. T\u1ED1c \u0111\u1ED9 b\u1EAFn c\u1EE7a anh \u1EA5y
+      l\xE0 r\u1EA5t nhanh"
+    speed: 2
+    rateFire: -0.8
+    health: 3
+    attackDamage: 20
+    idle: {fileID: 11400000, guid: e468ab473641baf4e8f31a4aa9553194, type: 2}
+    run: {fileID: 11400000, guid: 54a39c44b846ec94ab8b87384594bb76, type: 2}
+    move: {fileID: 11400000, guid: 7a69fb00ebcd43c46a4ed7f9b0b2657f, type: 2}
+    attack: {fileID: 11400000, guid: b8a7738afd248a14ab26117c376a743e, type: 2}
+    takeDamage: {fileID: 11400000, guid: c21469460a33d0a4b861a423c976715e, type: 2}
+    die: {fileID: 11400000, guid: 58a52ca2ac5533e46847added17d6a80, type: 2}
+    takeEffect: {fileID: 11400000, guid: 707c67cfc580091468836dedd9fb552a, type: 2}
+    skeletonDataAsset: {fileID: 11400000, guid: 2452835e0b8254737b358ef2238d1a10, type: 2}
