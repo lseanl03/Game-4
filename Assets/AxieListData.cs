@@ -44,7 +44,6 @@ public class AxieListData : BaseSave<AxieListData>
                 JsonUtility.FromJsonOverwrite(jsonText, axie);
             }
         }
-
     }
     public bool FileAlreadyExists(SelectAxie selectAxie)
     {
