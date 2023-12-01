@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class AxieManager : MonoBehaviour
 {
     public int upgradePoints;
-    public int axieIndex = 0;
+    public int axieSelectingIndex = 0;
     public GameObject axieListObj;
     public GameObject selectAxieUI;
     public Button axieChangeButton;
@@ -40,9 +41,36 @@ public class AxieManager : MonoBehaviour
     {
         GetAxie();
         GetUpgradePointData();
-        currentAxie = axieList[0];
-        SetPlayer();
+        GetCurrentAxie();
+        SetPlayer(axieSelectingIndex);
         HandleCloseSelectAxie();
+    }
+    public void GetCurrentAxie()
+    {
+        if(gameData.currentAxieName == AxieName.None)
+        {
+            currentAxie = axieList[0];
+        }
+        else
+        {
+            foreach(SelectAxie axie in axieList)
+            {
+                if (axie.axieName == gameData.currentAxieName)
+                {
+                    currentAxie = axie;
+                }
+            }
+        }
+        axieSelectingIndex = CurrentIndex();
+        gameData.currentAxieName = currentAxie.axieName;
+    }
+    public SelectAxie SelectingAxie()
+    {
+        return axieList[axieSelectingIndex];
+    }
+    public int CurrentIndex()
+    {
+        return axieList.IndexOf(currentAxie);
     }
     public void GetUpgradePointData()
     {
@@ -61,10 +89,10 @@ public class AxieManager : MonoBehaviour
     }
     void ChangeAxie()
     {
-        axieIndex++;
-        if(axieIndex >= axieList.Count) axieIndex = 0;
+        axieSelectingIndex++;
+        if(axieSelectingIndex >= axieList.Count) axieSelectingIndex = 0;
 
-        SetAxieActive(axieIndex);
+        SetAxieActive(axieSelectingIndex);
     }
     void GetAxie()
     {
@@ -97,7 +125,6 @@ public class AxieManager : MonoBehaviour
     {
         if (!axieListData.FileAlreadyExists(selectAxie))
         {
-            Debug.Log("null");
             Axie axie = new Axie();
             data.axieName = selectAxie.axieName;
             data.speed = selectAxie.speed;
@@ -108,7 +135,6 @@ public class AxieManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("!=null");
             selectAxie.speed = data.speed;
             selectAxie.health = data.health;
             selectAxie.attackDamage = data.attackDamage;
@@ -121,7 +147,7 @@ public class AxieManager : MonoBehaviour
         {
             if (index == i)
             {
-                currentAxie = axieList[i];
+                //currentAxie = axieList[i];
                 axieList[i].gameObject.SetActive(true);
                 SetStats(axieList[i]);
                 SetDes(axieList[i]);
@@ -181,6 +207,11 @@ public class AxieManager : MonoBehaviour
     {
         AxieListState(false);
         SelectAxieUIState(false);
+        if(currentAxie  != null)
+        {
+            axieSelectingIndex = CurrentIndex();
+            SetAxieActive(axieSelectingIndex);
+        }
     }
     public void HandleOpenSelectAxie()
     {
@@ -188,7 +219,7 @@ public class AxieManager : MonoBehaviour
         SelectAxieUIState(true);
         if(currentAxie != null)
         {
-            SetAxieActive(axieIndex);
+            SetAxieActive(axieSelectingIndex);
             SetUpgradeCost();
             UpgradePointsText();
         }
@@ -198,7 +229,9 @@ public class AxieManager : MonoBehaviour
         AxieListState(false);
         SelectAxieUIState(false);
 
-        SetPlayer();
+        SetPlayer(axieSelectingIndex);
+
+        gameData.currentAxieName = currentAxie.axieName;
     }
     void SetUpgradeCost()
     {
@@ -208,8 +241,9 @@ public class AxieManager : MonoBehaviour
         statsContent.GetHealthUpgradeCost(data.healthCost);
         statsContent.GetAttackUpgradeCost(data.attackCost);
     }
-    void SetPlayer()
+    public void SetPlayer(int index)
     {
+        currentAxie = axieList[index];
         PlayerController player = gameManager.player;
         if (player != null)
         {

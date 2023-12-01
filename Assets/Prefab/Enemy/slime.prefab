@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 4211454458831352111}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -249,7 +249,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.59999996, y: 0.59999996, z: 0.59999996}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7345701223551522360}
@@ -419,11 +419,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736cdf13df8679040bde6a0a7c8e8604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyName: Slime
+  enemyType: 1
+  description: "Slime v\u1EDBi kh\u1EA3 n\u0103ng ph\u1EE5c h\u1ED3i t\u1ED1t, slime
+    s\u1EBD c\xE0ng tr\u1EDF n\xEAn m\u1EA1nh h\u01A1n khi b\u1ECB ti\xEAu di\u1EC7t
+    (kh\u1EA3 n\u0103ng ph\u1EE5c h\u1ED3i l\xE0 c\xF3 gi\u1EDBi h\u1EA1n)"
+  isAttacking: 0
   isDie: 0
   isFacingRight: 0
   cost: 20
   moveSpeed: 1
-  maxHealth: 10
+  maxHealth: 30
   currentHealth: 0
   healthText: {fileID: 8347770120086175301}
   damage: 1

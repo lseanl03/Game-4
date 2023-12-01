@@ -212,8 +212,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e938429a521b154489d422829edc531a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyName: Flowering Treant
+  enemyType: 5
+  description: "Flowering Treant m\u1ED9t qu\xE1i c\xE2y di \u0111\u1ED9ng, b\u1EA5t
+    t\u1EED, v\xF4 h\u1EA1i l\xE0 nh\u1EEFng th\u1EE9 n\xF3 c\xF3 nh\u01B0ng h\xE3y
+    c\u1EA9n th\u1EADn khi \u0111\u1EBFn g\u1EA7n n\xF3"
+  isAttacking: 0
   isDie: 0
   isFacingRight: 0
+  cost: 0
   moveSpeed: 5
   maxHealth: 9999
   currentHealth: 0

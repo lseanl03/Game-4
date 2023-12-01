@@ -460,11 +460,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f446ec141585964e8432bf453d59ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyName: Slime Forest
+  enemyType: 2
+  description: "Slime Forest m\u1ED9t lo\u1EA1i slime d\u1EA1ng bong b\xF3ng, v\u1EDBi
+    kh\u1EA3 n\u0103ng d\u1EC5 v\u1EE1 c\u1EE7a n\xF3 h\xE3y c\u1EA9n th\u1EADn khi
+    va ch\u1EA1m v\u1EDBi n\xF3 n\u1EBFu b\u1EA1n kh\xF4ng mu\u1ED1n m\u1EA5t m\u1EA1ng"
+  isAttacking: 0
   isDie: 0
   isFacingRight: 0
   cost: 10
   moveSpeed: 2
-  maxHealth: 40
+  maxHealth: 100
   currentHealth: 0
   healthText: {fileID: 6302245252170606349}
   damage: 2

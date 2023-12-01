@@ -1,4 +1,4 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,11 +16,14 @@ public class PopupDamage : MonoBehaviour
     {
         transform.localScale = Vector3.one;
         damageValueText.alpha = 1f;
-        Sequence sequence = DOTween.Sequence();
         transform.DOScale(1.2f, duration);
+        Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOMoveY(transform.position.y + 1f, duration));
         sequence.Append(damageValueText.DOFade(0, duration));
         sequence.OnComplete(HideObj);
+    }
+    private void OnDisable()
+    {
     }
     void HideObj()
     {

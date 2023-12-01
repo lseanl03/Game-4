@@ -47,7 +47,6 @@ public class AxieListData : BaseSave<AxieListData>
     }
     public bool FileAlreadyExists(SelectAxie selectAxie)
     {
-        Debug.Log(axieList.Count);
         foreach(var axie in axieList)
         {
             if(axie.axieName == selectAxie.axieName)

@@ -20,6 +20,7 @@ public class SlimeFusionEnemy : EnemyBase
     public Item itemPrefab;
     private Transform startPoint, targetPoint, endPoint;
     private BoxCollider2D boxCollider2D;
+    private List<Tweener> tweenerList = new List<Tweener>();
     protected override void Awake()
     {
         base.Awake();
@@ -33,6 +34,11 @@ public class SlimeFusionEnemy : EnemyBase
     {
         AutoChangeState();
     }
+    public void OnDisable()
+    {
+        StopTweenList();
+    }
+
     public void ChangeState(SlimeFusionState state)
     {
         if (gameManager.player.isDie) return;
@@ -99,28 +105,43 @@ public class SlimeFusionEnemy : EnemyBase
     }
     public void MoveItemToPos(Item item)
     {
-        item.transform.DOMoveY(Random.Range(transform.position.y - 2, transform.position.y - 7), 1f).SetEase(Ease.InCubic).OnComplete(() =>
+        Tweener moveY = item.transform.DOMoveY(Random.Range(transform.position.y - 2, transform.position.y - 7), 1f).SetEase(Ease.InCubic).OnComplete(() =>
         {
             item.canGetItem = true;
         });
+        tweenerList.Add(moveY);
     }
     public void MoveTargetPoint()
     {
-        transform.DOMove(TargetPointRandom(), timeToPoint).SetEase(Ease.InOutSine).OnComplete(() =>
+        Tweener moveTarget = transform.DOMove(TargetPointRandom(), timeToPoint).SetEase(Ease.InOutSine).OnComplete(() =>
         {
             ChangeState(SlimeFusionState.SpawnPoint);
         });
+        tweenerList.Add(moveTarget);
     }
     public void MoveEndPoint()
     {
-        transform.DOMove(endPoint.position, timeToPoint).SetEase(Ease.InExpo).OnComplete(() =>
+        Tweener moveEndPoint = transform.DOMove(endPoint.position, timeToPoint).SetEase(Ease.InExpo).OnComplete(() =>
         {
             Destroy(gameObject);
         });
+        tweenerList.Add(moveEndPoint);
     }
     public Vector2 TargetPointRandom()
     {
-        Vector2 point = new Vector2(Random.Range(targetPoint.position.x - 5, targetPoint.position.x + 5), targetPoint.position.y);
+        Vector2 point = new Vector2(Random.Range(targetPoint.position.x - 5, targetPoint.position.x), targetPoint.position.y);
         return point;
     }
+    private void StopTweenList()
+    {
+        foreach (var tweener in tweenerList)
+        {
+            if (tweener != null)
+            {
+                tweener.Kill();
+            }
+        }
+        tweenerList.Clear();
+    }
+
 }

@@ -32,7 +32,6 @@ public abstract class BaseSave<T> : MonoBehaviour where T : MonoBehaviour
         if (!File.Exists(filePath))
         {
             File.Create(filePath).Dispose();
-            Debug.Log("create file" + GetType().Name);
         }
         string jsonText = JsonUtility.ToJson(this);
         File.WriteAllText(filePath, jsonText);

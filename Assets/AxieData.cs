@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum AxieName
 {
+    None,
     Buba,
     Olek,
     Pomodoro,

@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     protected GameData gameData => GameData.instance;
     private void Awake()
     {
+        Application.targetFrameRate = 60;
         instance = this;
     }
     private void Start()
@@ -29,6 +30,10 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            Instantiate(gameObject, transform);
+        }
         UpdateTime();
     }
     void SetPlayerStartingPos()

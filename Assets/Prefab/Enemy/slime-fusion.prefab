@@ -203,6 +203,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17737f3c5f4e7149b47fbaa543ad504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyName: Slime Fusion
+  enemyType: 3
+  description: "Slime Fusion m\u1ED9t slime kh\xF4ng nh\u01B0ng v\xF4 h\u1EA1i m\xE0
+    c\xF2n c\xF3 l\u1EE3i, n\xF3 c\xF3 kh\u1EA3 n\u0103ng r\u1EDBt ra c\xE1c v\u1EADt
+    ph\u1EA9m gi\xE1 tr\u1ECB h\xE3y ch\xFA \xFD nh\xE9"
+  isAttacking: 0
   isDie: 0
   isFacingRight: 0
   cost: 0

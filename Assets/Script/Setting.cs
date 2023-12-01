@@ -7,6 +7,7 @@ public class Setting : MonoBehaviour
 {
     public bool isPaused;
     public Button selectAxieButton;
+    public Button enemyInfoButton;
     public Button pauseGameButton;
     public Button resetGameButton;
     private GameManager gameManager=> GameManager.instance;
@@ -18,6 +19,7 @@ public class Setting : MonoBehaviour
         selectAxieButton.onClick.AddListener(OpenSelectAxie);
         pauseGameButton.onClick.AddListener(PauseGame);
         resetGameButton.onClick.AddListener(ResetGame);
+        enemyInfoButton.onClick.AddListener(OpenEnemyInfo);
     }
     private void Start()
     {
@@ -52,5 +54,9 @@ public class Setting : MonoBehaviour
     void OpenSelectAxie()
     {
         axieManager.HandleOpenSelectAxie();
+    }
+    void OpenEnemyInfo()
+    {
+        uiManager.EnemyInfoPanelState(true);
     }
 }

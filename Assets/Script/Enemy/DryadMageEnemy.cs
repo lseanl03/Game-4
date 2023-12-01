@@ -78,11 +78,13 @@ public class DryadMageEnemy : EnemyBase
     }
     public IEnumerator Shoot()
     {
+        isAttacking = true;
         countTime = 0;
         skeletonAnimation.state.SetAnimation(0, attack, false);
         float duration = attack.Animation.Duration;
         yield return new WaitForSeconds(duration / (skeletonAnimation.timeScale * 2f));
         PoolManager.instance.SpawnEnemyBullet(firePoint, damage);
+        isAttacking = false;
     }
     protected override void Die()
     {

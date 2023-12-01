@@ -3,11 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+public enum EnemyType {
+    None,
+    Slime,
+    SlimeForest,
+    SlimeFusion,
+    WolfAlpha,
+    FloweringTreant,
+    DryadMage,
+}
 public class EnemyBase : MonoBehaviour
 {
+    public string enemyName;
+    public EnemyType enemyType;
+    [TextArea] public string description;
     [Header("Base")]
     [Space(10)]
+    public bool isAttacking;
     public bool isDie;
     public bool isFacingRight;
     public int cost;
@@ -84,9 +96,12 @@ public class EnemyBase : MonoBehaviour
     protected virtual void AutoChangeState() { }
     public virtual void TakeDamage(int value)
     {
+        if (!isAttacking)
+        {
+            skeletonAnimation.state.SetAnimation(0, takeDamage, false);
+        }
         currentHealth -= value;
 
-        skeletonAnimation.state.SetAnimation(0, takeDamage, false);
         PoolManager.instance.SpawnPopupDamage(popupDamagePoint, value);
         if (currentHealth <= 0)
         {

@@ -12,9 +12,11 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI TimeText;
     public Button startButton;
     public Button normalAttack;
+    public Button quitButton;
     public GameObject joyStick;
     public GameObject skill;
     public EndGamePanel endGamePanel;
+    public EnemyInfoPanel enemyInfoPanel;
     public HealthBar healthBar;
     public EffectBar effectBar;
     public Setting setting;
@@ -27,6 +29,7 @@ public class UIManager : MonoBehaviour
     {
         instance = this;
         startButton.onClick.AddListener(StartGame);
+        quitButton.onClick.AddListener(QuitGame);
     }
     private void Start()
     {
@@ -48,6 +51,10 @@ public class UIManager : MonoBehaviour
     {
         endGamePanel.gameObject.SetActive(state);
     }
+    public void EnemyInfoPanelState(bool state)
+    {
+        enemyInfoPanel.gameObject.SetActive(state);
+    }
 
     public void Score(int value)
     {
@@ -67,6 +74,8 @@ public class UIManager : MonoBehaviour
         scoreText.gameObject.SetActive(true);
         setting.pauseGameButton.gameObject.SetActive(true);
         setting.selectAxieButton.gameObject.SetActive(false);
+        setting.enemyInfoButton.gameObject.SetActive(false);
+        quitButton.gameObject.SetActive(false);
     }
     void SettingInitial()
     {
@@ -74,5 +83,9 @@ public class UIManager : MonoBehaviour
         SkillState(false);
         TimeText.gameObject.SetActive(false);
         scoreText.gameObject.SetActive(false);
+    }
+    void QuitGame()
+    {
+        Application.Quit();
     }
 }

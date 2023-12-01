@@ -45,10 +45,10 @@ public class StatsContent : TabContent
         if(axieManager.upgradePoints >= axieManager.axieData.speedCost)
         {
             speedSlider.value += speedUpgradeValue;
-            axieManager.currentAxie.speed = speedSlider.value;
-            axieManager.currentAxie.TakeEffect();
+            axieManager.SelectingAxie().speed = speedSlider.value;
+            axieManager.SelectingAxie().TakeEffect();
             axieManager.UpgradePoint(-axieManager.axieData.speedCost);
-            axieManager.UpdateCurrentAxieData(axieManager.currentAxie);
+            axieManager.UpdateCurrentAxieData(axieManager.SelectingAxie());
         }
         else
         {
@@ -61,10 +61,10 @@ public class StatsContent : TabContent
         if(axieManager.upgradePoints >= axieManager.axieData.rateFireCost)
         {
             rateFireSlider.value += rateFireUpgradeValue;
-            axieManager.currentAxie.rateFire = Mathf.Abs(rateFireSlider.value);
-            axieManager.currentAxie.TakeEffect();
+            axieManager.SelectingAxie().rateFire = Mathf.Abs(rateFireSlider.value);
+            axieManager.SelectingAxie().TakeEffect();
             axieManager.UpgradePoint(-axieManager.axieData.rateFireCost);
-            axieManager.UpdateCurrentAxieData(axieManager.currentAxie);
+            axieManager.UpdateCurrentAxieData(axieManager.SelectingAxie());
         }
         else
         {
@@ -77,10 +77,10 @@ public class StatsContent : TabContent
         if (axieManager.upgradePoints >= axieManager.axieData.healthCost)
         {
             healthSlider.value += healthUpgradeValue;
-            axieManager.currentAxie.health = Mathf.FloorToInt(healthSlider.value);
-            axieManager.currentAxie.TakeEffect();
+            axieManager.SelectingAxie().health = Mathf.FloorToInt(healthSlider.value);
+            axieManager.SelectingAxie().TakeEffect();
             axieManager.UpgradePoint(-axieManager.axieData.healthCost);
-            axieManager.UpdateCurrentAxieData(axieManager.currentAxie);
+            axieManager.UpdateCurrentAxieData(axieManager.SelectingAxie());
         }
         else
         {
@@ -93,10 +93,10 @@ public class StatsContent : TabContent
         if (axieManager.upgradePoints >= axieManager.axieData.attackCost)
         {
             attackSlider.value += attackUpgradeValue;
-            axieManager.currentAxie.attackDamage = Mathf.FloorToInt(attackSlider.value);
-            axieManager.currentAxie.TakeEffect();
+            axieManager.SelectingAxie().attackDamage = Mathf.FloorToInt(attackSlider.value);
+            axieManager.SelectingAxie().TakeEffect();
             axieManager.UpgradePoint(-axieManager.axieData.attackCost);
-            axieManager.UpdateCurrentAxieData(axieManager.currentAxie);
+            axieManager.UpdateCurrentAxieData(axieManager.SelectingAxie());
         }
         else
         {

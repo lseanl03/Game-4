@@ -5,7 +5,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,7 +34,6 @@ public class PlayerController : MonoBehaviour
     public PlayerAttack playerAttack;
     public PlayerEffect playerEffect;
     private Rigidbody2D rb2d;
-    private BoxCollider2D boxCollider;
     protected GameManager gameManager => GameManager.instance;
 
     void Awake()
@@ -46,7 +44,6 @@ public class PlayerController : MonoBehaviour
 
         rb2d = GetComponent<Rigidbody2D>();
         skeletonAnimation = GetComponent<SkeletonAnimation>();
-        boxCollider = GetComponent<BoxCollider2D>();
     }
     void Start()
     {
@@ -82,16 +79,22 @@ public class PlayerController : MonoBehaviour
     }
     void AutoChangeState()
     {
-        if (playerEffect.isStun) return;
         if (skeletonAnimation.AnimationState.GetCurrent(0).IsComplete && !isDie)
         {
-            if (rb2d.velocityX == 0 && rb2d.velocityY == 0)
+            if (playerEffect.isStun)
             {
-                    Run();
+                Run();
             }
-            else if (rb2d.velocityX != 0 || rb2d.velocityY != 0)
+            else
             {
+                if (rb2d.velocityX == 0 && rb2d.velocityY == 0)
+                {
+                    Run();
+                }
+                else if (rb2d.velocityX != 0 || rb2d.velocityY != 0)
+                {
                     Move();
+                }
             }
         }
 
@@ -122,8 +125,8 @@ public class PlayerController : MonoBehaviour
     void Control()
     {
         if (!canMove) return;
-        float horizontal = /*fixedJoystick.Horizontal = */Input.GetAxisRaw("Horizontal");
-        float vertical =/* fixedJoystick.Vertical = */Input.GetAxisRaw("Vertical");
+        float horizontal = fixedJoystick.Horizontal;
+        float vertical = fixedJoystick.Vertical;
         rb2d.velocity = new Vector2(horizontal * moveSpeed, vertical * moveSpeed);
     }
     void Run()
@@ -158,6 +161,7 @@ public class PlayerController : MonoBehaviour
         if (currentAnimationTime >= duration / 2)
         {
             skeletonAnimation.timeScale = 0;
+            gameManager.time = 0;
         }
     }
     bool HaveShield()
@@ -174,9 +178,5 @@ public class PlayerController : MonoBehaviour
             }
         }
         return false;
-    }
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        Debug.Log(collision);
     }
 }

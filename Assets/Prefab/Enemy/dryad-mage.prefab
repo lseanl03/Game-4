@@ -246,11 +246,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f272b31345a24444fa483607e3e26134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyName: Dryad Mage
+  enemyType: 6
+  description: "Dryad Mage c\xF3 kh\u1EA3 n\u0103ng b\u1EAFn ra nh\u1EEFng qu\u1EA3
+    c\u1EA7u ph\xE9p thu\u1EADt bay \u0111\u1EBFn m\u1EE5c ti\xEAu. Khi l\u01B0\u1EE3ng
+    hp d\u01B0\u1EDBi <color=green>50%</color>, Dryad Mage s\u1EBD b\u1EAFn ra <color=green>1</color>
+    qu\u1EA3 c\u1EA7u ph\xE9p thu\u1EADt v\u1EDBi k\xEDch th\u01B0\u1EDBc l\u1EDBn"
+  isAttacking: 0
   isDie: 0
   isFacingRight: 0
-  cost: 15
+  cost: 20
   moveSpeed: 0
-  maxHealth: 30
+  maxHealth: 150
   currentHealth: 0
   healthText: {fileID: 5052849047209017227}
   damage: 1

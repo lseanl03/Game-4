@@ -1,0 +1,5 @@
+E:/Github/Game-4/.utmp/RelWithDebInfo/18a1g386/armeabi-v7a/CMakeFiles/edit_cache.dir
+E:/Github/Game-4/.utmp/RelWithDebInfo/18a1g386/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+E:/Github/Game-4/.utmp/RelWithDebInfo/18a1g386/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+E:/Github/Game-4/.utmp/RelWithDebInfo/18a1g386/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+E:/Github/Game-4/.utmp/RelWithDebInfo/18a1g386/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir

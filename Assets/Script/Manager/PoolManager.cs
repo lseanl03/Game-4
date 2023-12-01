@@ -2,7 +2,6 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class PoolManager : MonoBehaviour
 {
@@ -24,7 +23,7 @@ public class PoolManager : MonoBehaviour
     [Header("PopupDamage")]
     [SerializeField] private PopupDamage popupDamagePrefab;
     [SerializeField] private GameObject popupDamageHolder;
-    private List<PopupDamage> popupDamageList = new List<PopupDamage>();
+    public List<PopupDamage> popupDamageList = new List<PopupDamage>();
 
     [Header("CheckPoint")]
     [SerializeField] private CheckPoint checkPointPrefab;
@@ -137,8 +136,15 @@ public class PoolManager : MonoBehaviour
         }
         else
         {
-            popupDamage.transform.position = pos;
-            popupDamage.gameObject.SetActive(true);
+            foreach(PopupDamage popup in popupDamageList)
+            {
+                if (!popup.gameObject.activeSelf)
+                {
+                    popup.transform.position = pos;
+                    popup.gameObject.SetActive(true);
+                    break;
+                }
+            }
         }
         popupDamage.damageValueText.text = value.ToString();
 
