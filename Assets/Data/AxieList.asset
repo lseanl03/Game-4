@@ -32,7 +32,7 @@ MonoBehaviour:
   - axieName: 1
     AxieDescribe: "Buba l\xE0 m\u1ED9t axie nhanh nh\u1EA1y, t\u1ED1c \u0111\u1ED9
       ch\u1EA1y c\u1EE7a Buba r\u1EA5t nhanh"
-    speed: 3
+    speed: 4
     rateFire: -1
     health: 2
     attackDamage: 10
@@ -48,7 +48,7 @@ MonoBehaviour:
     AxieDescribe: "Olek l\xE0 m\u1ED9t chi\u1EBFn binh th\u1EF1c th\u1EE5, c\xF9ng
       v\u1EDBi b\u1ED9 gi\xE1p s\u1EAFt, s\u1EE9c kh\u1ECFe c\u1EE7a anh \u1EA5y
       r\u1EA5t cao"
-    speed: 2
+    speed: 3
     rateFire: -1
     health: 4
     attackDamage: 10
@@ -64,7 +64,7 @@ MonoBehaviour:
     AxieDescribe: "Pomodora l\xE0 m\u1ED9t axie c\u1EF1c k\xEC nhi\u1EC7t huy\u1EBFt
       v\xE0 n\u0103ng \u0111\u1ED9ng, s\u1EE9c t\u1EA5n c\xF4ng c\u1EE7a anh \u1EA5y
       r\u1EA5t m\u1EA1nh m\u1EBD"
-    speed: 2
+    speed: 3
     rateFire: -1
     health: 2
     attackDamage: 15
@@ -81,7 +81,7 @@ MonoBehaviour:
       anh \u1EA5y lu\xF4n x\u1EED l\xED t\xECnh hu\u1ED1ng m\u1ED9t c\xE1ch nhanh
       v\xE0 ch\xEDnh x\xE1c. T\u1ED1c \u0111\u1ED9 b\u1EAFn c\u1EE7a anh \u1EA5y
       l\xE0 r\u1EA5t nhanh"
-    speed: 2
+    speed: 3
     rateFire: -0.8
     health: 2
     attackDamage: 10

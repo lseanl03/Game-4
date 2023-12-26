@@ -195,7 +195,7 @@ MonoBehaviour:
   isFacingRight: 0
   cost: 20
   moveSpeed: 0
-  maxHealth: 150
+  maxHealth: 100
   currentHealth: 0
   healthText: {fileID: 8559607323541392692}
   damage: 1

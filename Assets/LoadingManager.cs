@@ -15,6 +15,7 @@ public class LoadingManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -36,7 +37,7 @@ public class LoadingManager : MonoBehaviour
             yield return null;
         }
         callback?.Invoke();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         LoadPanelState(false);
         yield return null;
     }

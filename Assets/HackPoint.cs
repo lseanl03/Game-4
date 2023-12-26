@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class HackPoint : MonoBehaviour
 {
-    public int code = 100;
+    public const int code = 1000;
     private AxieManager axieManager => AxieManager.instance;
     public TMP_InputField inputField;
     public Button getCodeButton;

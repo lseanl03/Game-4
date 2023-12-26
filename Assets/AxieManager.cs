@@ -104,7 +104,7 @@ public class AxieManager : MonoBehaviour
                 {
                     axieList[i].axieDescribe = axieData.AxieDescribe;
                     axieList[i].speed = axieData.speed;
-                    axieList[i].rateFire = axieData.rateFire;
+                    axieList[i].rateFire = Mathf.Abs(axieData.rateFire);
                     axieList[i].health = axieData.health;
                     axieList[i].attackDamage = axieData.attackDamage;
 
@@ -123,22 +123,24 @@ public class AxieManager : MonoBehaviour
     }
     void GetAxieData(SelectAxie selectAxie, Axie data)
     {
-        if (!axieListData.FileAlreadyExists(selectAxie))
+        if (data.axieName == AxieName.None)
         {
-            Axie axie = new Axie();
-            data.axieName = selectAxie.axieName;
-            data.speed = selectAxie.speed;
-            data.rateFire = Mathf.Abs(selectAxie.rateFire);
-            data.health = selectAxie.health;
-            data.attackDamage = selectAxie.attackDamage;
-            //axieListData.axieList.Add(axie);
+            if (!axieListData.FileAlreadyExists(selectAxie))
+            {
+                Axie axie = new Axie();
+                data.axieName = selectAxie.axieName;
+                data.speed = selectAxie.speed;
+                data.rateFire = Mathf.Abs(selectAxie.rateFire);
+                data.health = selectAxie.health;
+                data.attackDamage = selectAxie.attackDamage;
+            }
         }
         else
         {
             selectAxie.speed = data.speed;
             selectAxie.health = data.health;
             selectAxie.attackDamage = data.attackDamage;
-            selectAxie.rateFire = data.rateFire;
+            selectAxie.rateFire = Mathf.Abs(data.rateFire);
         }
     }
     void SetAxieActive(int index)

@@ -127,6 +127,8 @@ public class PlayerController : MonoBehaviour
         if (!canMove) return;
         float horizontal = fixedJoystick.Horizontal;
         float vertical = fixedJoystick.Vertical;
+        //float horizontal = Input.GetAxis("Horizontal");
+        //float vertical = Input.GetAxis("Vertical");
         rb2d.velocity = new Vector2(horizontal * moveSpeed, vertical * moveSpeed);
     }
     void Run()
